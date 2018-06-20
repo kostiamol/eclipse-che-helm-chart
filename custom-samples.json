@@ -1,0 +1,47 @@
+[
+    {
+    "name": "go-rest-api-template",
+    "displayName": "go-rest-api-template",
+    "path": "/go-rest-api-template",
+    "description": "Reusable template for building REST Web Services.",
+    "projectType": "blank",
+    "mixins": [],
+    "attributes": {
+      "language": [
+        "go"
+      ]
+    },
+    "modules": [],
+    "problems": [],
+    "source": {
+      "type": "git",
+      "location": "https://github.com/kostiamol/go-rest-api-template",
+      "parameters": {}
+    },
+    "commands": [
+        {
+            "commandLine": "cd /projects/go-rest-api-template && go get -d ./... && rm -rf $GOPATH/src/github.com/kostiamol/go-rest-api-template/vendor/github.com/unrolled && cd cmd/go-rest-api-template && go build && ./go-rest-api-template",
+            "name": "run",
+            "attributes": {
+              "goal": "Run",
+              "previewUrl": "${server.8080/tcp}/users"
+            },
+            "type": "custom"
+        },
+        {
+          "commandLine": "cd /projects/go-rest-api-template\nswagger serve -p=8090 --no-open -F=swagger swagger.json",
+          "name": "run swagger",
+          "attributes": {
+            "goal": "Run",
+            "previewUrl": "http://petstore.swagger.io/?url=${server.8090/tcp}/swagger.json#/"
+          },
+          "type": "custom"
+        }
+      ],
+    "links": [],
+    "category": "Samples",
+    "tags": [
+      "Go"
+    ]
+  }
+]
