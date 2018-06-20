@@ -140,7 +140,7 @@ spec:
             configMapKeyRef:
               key: JAVA_OPTS
               name: che
-	- name: CHE_INFRA_KUBERNETES_PASSWORD
+        - name: CHE_INFRA_KUBERNETES_PASSWORD
           valueFrom:
             configMapKeyRef:
               key: CHE_INFRA_KUBERNETES_PASSWORD
