@@ -11,7 +11,7 @@
 #  username: myUser
 #  password: myPass
 
-cheImage: registry1-docker-io.repo.lab.pl.alcatel-lucent.com/eclipse/che-server:nightly
+cheImage: registry1-docker-io.repo.lab.pl.alcatel-lucent.com/eclipse/che-server:6.10.0
 cheImagePullPolicy: Always
 cheKeycloakRealm: "che"
 cheKeycloakClientId: "che-public"
@@ -24,7 +24,7 @@ global:
   #  This value can be passed if custom Oidc provider is used, and there is no need to deploy keycloak in multiuser mode
   #  default (if empty) is true
   #cheDedicatedKeycloak: false
-  ingressDomain: 192.168.99.100.nip.io
+  ingressDomain: ""
   # See --annotations-prefix flag (https://github.com/kubernetes/ingress-nginx/blob/master/docs/user-guide/cli-arguments.md)
   ingressAnnotationsPrefix: "nginx."
   # options: default-host, single-host, multi-host
