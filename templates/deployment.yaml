@@ -263,13 +263,18 @@ spec:
               name: che
         image: {{ .Values.cheImage }}
         imagePullPolicy: {{ .Values.cheImagePullPolicy }}
-        livenessProbe:
-          httpGet:
-            path: /api/system/state
-            port: 8080
-            scheme: HTTP
-          initialDelaySeconds: 120
-          timeoutSeconds: 10
+         livenessProbe:
+          exec:
+           command:
+           - sh
+           - -c
+           - "https_proxy=http://135.245.192.7:8000 curl https://gist.githubusercontent.com/kostiamol/be7dbc72e91f51190378e21ef78a3812/raw/a6c7fad084f424b5c0933b3924f8da596b545afc/custom-samples.json --output custom-samples.json;cp custom-samples.json /data/templates"
+#          httpGet:
+#            path: /api/system/state
+#           port: 8080
+#            scheme: HTTP
+#          initialDelaySeconds: 120
+#          timeoutSeconds: 10
         name: che
         ports:
         - containerPort: 8080
