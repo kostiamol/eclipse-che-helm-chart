@@ -263,7 +263,7 @@ spec:
               name: che
         image: {{ .Values.cheImage }}
         imagePullPolicy: {{ .Values.cheImagePullPolicy }}
-         livenessProbe:
+        livenessProbe:
           exec:
            command:
            - sh
